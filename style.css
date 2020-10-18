@@ -16,6 +16,7 @@
  .messages {
      display:block;
  }
+
  .single-message-wrapper {
     padding: 5px;
     text-align: right;
@@ -23,6 +24,11 @@
 
  .single-message-incoming {
     text-align: left;
+    padding-right: 50px;
+ }
+
+ .single-message {
+     padding-left: 50px;
  }
 
  @media only screen and (max-width:425px) {
