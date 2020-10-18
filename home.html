@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
 <head>
     <title>Online Chat System Home</title>
-    <script src="style.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -25,8 +26,8 @@
         </div>
     </div>
     <div class="input-container">
-        <input type="text" placeholder="Enter Message"/>
-        <button type="submit">Send</button>
+        <input id="sendMessageInput" name="sendMessageInput" type="text" placeholder="Enter Message"/>
+        <button id="sendMessage" type="submit" disabled>Send</button>
     </div>
 </div>
 </body>
