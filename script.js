@@ -11,16 +11,33 @@ $(function() {
         let messageBody = $('#sendMessageInput').val();
         console.log(messageBody);
         let message = new Message(messageBody, "will", "randomer");
+        let confirmationMessage;
+     
         console.log("Sent message");
         console.log(message);
 
+        addNewMessage(message, false);
+
         delay(1000).then(function() {
             message.messageRecieved();
-            console.log("Recieve message");
-            console.log(message);
+            confirmationMessage = new Message("Message Recieved at " + message.dateRecieved, "randomer", "will");
+            addNewMessage(confirmationMessage, true);
+            confirmationMessage.messageRecieved();
         });
      })
 })
+
+function addNewMessage(message, incoming){
+    let messageBoard = $('#messages');
+    let newMessage;
+    let singleMessageClass = "single-message";
+
+    if (incoming)
+        singleMessageClass += "-incoming";
+
+    newMessage = "<div class='single-message-wrapper'><div class='" + singleMessageClass + "'>" + message.body + "</div></div>";
+    messageBoard.append(newMessage);
+}
 
 /*Creating a delay promise*/ 
 function delay(millisecond, v) {
