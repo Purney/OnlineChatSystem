@@ -1,0 +1,40 @@
+.container {
+    height: 100%;
+    width: 80%;
+    min-width: 300px;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: -webkit-center;
+    background-color: #adf2f7;
+    border: black 1px solid;
+}
+
+.chat-container {
+    background-color: #95d7db;
+ }
+ 
+ .messages {
+     display:block;
+ }
+ .single-message-wrapper {
+    background-color: blue; 
+    width: fit-content;
+    border-radius: 40%;
+    padding-left: 12px;
+    padding-bottom: 8px;
+ }
+
+ .single-message-wrapper:nth-child(even) {
+    background-color: green; 
+ }
+
+ .single-message {
+
+ }
+
+ @media only screen and (max-width:425px) {
+     .container {
+         width: 100%;
+         margin: 0;
+     }
+ }
