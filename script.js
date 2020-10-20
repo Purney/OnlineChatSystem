@@ -1,9 +1,17 @@
 $(function() {
+    getDraftMessage();
+
     $('#sendMessageInput').keyup(function()  {
-        if($('#sendMessageInput').val() != "")
+        console.log($(this).val());
+
+        if($(this).val() != "")
+        {
             $('#sendMessage').prop('disabled', false);
+            localStorage.setItem("draftMessage", $(this).val());
+        }
         else {
             $('#sendMessage').prop('disabled', true);
+            
         }
     })
 
@@ -26,6 +34,14 @@ $(function() {
         });
      })
 })
+
+function getDraftMessage() {
+    console.log($('#sendMessageInput').val())
+    if (localStorage.draftMessage != undefined)
+        $('#sendMessageInput').val(localStorage.draftMessage);
+
+    console.log($('#sendMessageInput').val())
+}
 
 function addNewMessage(message, incoming){
     let messageBoard = $('#messages');
