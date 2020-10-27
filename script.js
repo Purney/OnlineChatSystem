@@ -2,17 +2,15 @@ $(function() {
     getDraftMessage();
 
     $('#sendMessageInput').keyup(function()  {
-        console.log($(this).val());
-
         if($(this).val() != "")
         {
-            $('#sendMessage').prop('disabled', false);
-            localStorage.setItem("draftMessage", $(this).val());
+            setButtonDisabledStatus(false);
         }
         else {
-            $('#sendMessage').prop('disabled', true);
-            
+            setButtonDisabledStatus(true);
         }
+
+        localStorage.setItem("draftMessage", $(this).val());
     })
 
     $('#sendMessage').click( function(){
@@ -35,12 +33,17 @@ $(function() {
      })
 })
 
-function getDraftMessage() {
-    console.log($('#sendMessageInput').val())
-    if (localStorage.draftMessage != undefined)
-        $('#sendMessageInput').val(localStorage.draftMessage);
+function setButtonDisabledStatus(bool){
+    $('#sendMessage').prop('disabled', bool);
+}
 
-    console.log($('#sendMessageInput').val())
+function getDraftMessage() {
+    if (localStorage.draftMessage != undefined)
+    {
+        $('#sendMessageInput').val(localStorage.draftMessage);
+        setButtonDisabledStatus(false);
+    }
+
 }
 
 function addNewMessage(message, incoming){
