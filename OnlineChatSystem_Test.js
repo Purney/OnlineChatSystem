@@ -1,5 +1,5 @@
 suite("Basic Chat Functionality", function(){
-    setup(function(){
+    suiteSetup(function(){
         this.newMessage = "message";
     });
 

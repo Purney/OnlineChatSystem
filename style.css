@@ -31,6 +31,10 @@
      padding-left: 50px;
  }
 
+ #tests {
+     display: none;
+ }
+
  @media only screen and (max-width:425px) {
      .container {
          width: 100%;
